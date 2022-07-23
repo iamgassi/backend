@@ -149,12 +149,13 @@ app.post('/register',(req,res)=>{
   if(username && (password ===repeatpass))
   {
     
-    bcrypt.hash(password,10).then(function(hash) {
-    console.log(typeof(hash));
+    // bcrypt.hash(password,10).then(function(hash) {
+    // console.log(typeof(hash));
 					userModel.create(
 						{
 							username:username,
-							password:hash,
+							// password:hash,
+							password:password,
                             email:email
 
 						}
@@ -168,7 +169,7 @@ app.post('/register',(req,res)=>{
 						console.log(err)
 						res.json({ msg:"User Already Exist!!"})
 					})
-		})
+		// })
 	}
 	else
 	{
