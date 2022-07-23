@@ -36,14 +36,11 @@ app.route('/user').get((req,res)=>{
 
 app.post('/register',(req,res)=>{
 	const response=req.body
-	// console.log("1st",response.username);
 	const username=response.username;
     const email=response.email
 	const password=response.password;
 	const repeatpass=response.repeatPass;
 
-	// console.log("verify",username,email,password,repeatpass)
-	
 	if(!username)
 	{
 			res.json({ msg:"Please Enter Username"})
@@ -67,8 +64,6 @@ app.post('/register',(req,res)=>{
 			
 			return
 	}
-
-	console.log("2nd",username,password,email)
 
   if(username && (password ===repeatpass))
   {
